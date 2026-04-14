@@ -1,1 +1,36 @@
-/* Пиши стили тут */
+.Container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.star {
+    display: none;
+}
+
+.star-label {
+    background-image: url("img/star-empty.png");
+    background-size: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 120px; 
+    height: 150px;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    transition: all 0.2s ease;
+}
+
+.star-label:hover,
+.star-label:hover ~ .star-label {
+    background-image: url("img/star.png");
+}
+
+.star:checked + .star-label,
+.star:checked + .star-label ~ .star-label {
+    background-image: url("img/star.png");
+}
+
+.Container:hover .star:checked + .star-label ~ .star-label {
+    background-image: url("img/star.png");
+}
